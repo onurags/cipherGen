@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--External StyleSheet-->
     <link rel="stylesheet" href="css/index.css" />
-    <!--Font Awesome CDN-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/all.css"
@@ -13,14 +11,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <title>Password Generator</title>
   </head>
   <body>
     <div class="container">
+      <h1>Password Generator</h1>
       <div class="input-box">
         <input type="text" id="passwordInput" readonly />
-        <i class="fas fa-copy" id="copy-btn"></i>
+        <i class="fas fa-copy" id="copy-btn" title="Copy to clipboard"></i>
       </div>
       <div class="range-box">
         <input type="range" min="6" max="40" value="8" id="range" />
