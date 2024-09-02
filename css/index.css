@@ -10,10 +10,31 @@
 body {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column; 
+  justify-content: flex-start; /* Align items to the top */
   align-items: center;
-  background: linear-gradient(135deg, #4682b4 0%, #6dd5ed 100%);
+  background: linear-gradient(135deg, #fefefe 0%, #cef3fb 100%);
   font-family: "Poppins", sans-serif;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  margin-top: 20px;
+}
+
+.project-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #4682b4;
+  letter-spacing: 2px;
+  text-align: center;
+  background: rgba(255,255,255,0.35);
+  padding: 12px 36px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(70, 130, 180, 0.10);
 }
 
 .container {
