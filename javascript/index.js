@@ -1,41 +1,37 @@
-// filepath: c:\Users\anurag\Documents\Projects\cipherGen\javascript\index.js
+// Selecting Element
+const passwordInput = document.getElementById("passwordInput");
+const copyBtn = document.getElementById("copy-btn");
+const rangeSlider = document.getElementById("range");
+const sliderNumber = document.getElementById("slider-number");
+const generatBtn = document.getElementById("generate-button");
 
-const characters = {
-  lowercase: 'abcdefghijklmnopqrstuvwxyz',
-  uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  numbers: '0123456789',
-  symbols: '!@#$%^&*()_+[]{}|;:,.<>?'
+//Generate Password Function
+const generatePass = () => {
+  let newpass = "";
+  let all =
+    "abcdefghijklmnopqrstubwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890()[]<>&%@#";
+  for (let i = 0; i < rangeSlider.value; i++) {
+    newpass += all[Math.floor(Math.random() * all.length)];
+  }
+  passwordInput.value = newpass;
 };
 
-const passwordInput = document.getElementById('passwordInput');
-const rangeInput = document.getElementById('range');
-const sliderNumber = document.getElementById('slider-number');
-const generateButton = document.getElementById('generate-button');
-const copyButton = document.getElementById('copy-btn');
+//Calling The Function On Page Load
+generatePass();
 
-sliderNumber.textContent = rangeInput.value;
-
-rangeInput.addEventListener('input', (e) => {
-  sliderNumber.textContent = e.target.value;
-});
-
-generateButton.addEventListener('click', () => {
-  const passwordLength = rangeInput.value;
-  passwordInput.value = generatePassword(passwordLength);
-});
-
-copyButton.addEventListener('click', () => {
+//Copy Button Click Event Handle
+copyBtn.addEventListener("click", () => {
   passwordInput.select();
-  document.execCommand('copy');
-  alert('Password copied to clipboard!');
+  document.execCommand("copy");
+  //Change The Icon After Copy
+  copyBtn.setAttribute("class", "far fa-clipboard");
+  
 });
 
-function generatePassword(length) {
-  const allCharacters = characters.lowercase + characters.uppercase + characters.numbers + characters.symbols;
-  let password = '';
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * allCharacters.length);
-    password += allCharacters[randomIndex];
-  }
-  return password;
-}
+//Slider Slide Input Event Handle
+rangeSlider.addEventListener("input", () => {
+  sliderNumber.textContent = rangeSlider.value;
+});
+
+//Genearte Button Click Event Handle
+generatBtn.addEventListener("click", generatePass);
