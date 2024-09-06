@@ -14,13 +14,13 @@ A modern, stylish password generator built with HTML, CSS, and JavaScript.
 
 ## 🖼️ Preview
 
-<img src="https://user-images.githubusercontent.com/your-github-username/cipherGen-demo.png" alt="Cipher Gen Demo" width="400"/>
+<img src="images/demo.png" alt="Cipher Gen Demo" width="400"/>
 
 ## 📦 Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-github-username/cipherGen.git
+   git clone https://github.com/onurags/cipherGen.git
    ```
 2. **Open `index.html` in your browser.**
 
